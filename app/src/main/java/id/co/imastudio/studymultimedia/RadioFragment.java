@@ -53,13 +53,13 @@ public class RadioFragment extends Fragment {
         stop.setVisibility(View.GONE);
         progressBar.setVisibility(View.INVISIBLE);
 
-        player = new MediaPlayer();
 
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Toast di Fragment", Toast.LENGTH_SHORT).show();
                 try {
+                    player = new MediaPlayer();
                     player.setDataSource("http://103.16.198.36:9160/stream");
                     player.prepareAsync();
                     player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -69,6 +69,8 @@ public class RadioFragment extends Fragment {
                         }
                     });
                 } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (IllegalStateException e){
                     e.printStackTrace();
                 }
                 play.setVisibility(View.GONE);
