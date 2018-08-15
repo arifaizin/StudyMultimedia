@@ -32,6 +32,7 @@ public class VideoFragment extends Fragment {
 
         videoView = (VideoView) view.findViewById(R.id.videoView);
         videoView.setVideoURI(Uri.parse("http://idn.id/semarang/tes/tatacara.mp4"));
+        //imastudio.3gp 
         mediaController = new MediaController(getActivity());
         mediaController.setAnchorView(videoView);
         videoView.setMediaController(mediaController);
