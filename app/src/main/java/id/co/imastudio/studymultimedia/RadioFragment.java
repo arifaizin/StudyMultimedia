@@ -61,6 +61,7 @@ public class RadioFragment extends Fragment {
                 try {
                     player = new MediaPlayer();
                     player.setDataSource("http://103.16.198.36:9160/stream");
+                    //http://gajahmada.i.streaming.id:8000/live
                     player.prepareAsync();
                     player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                         @Override
